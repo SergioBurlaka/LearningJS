@@ -100,25 +100,25 @@ CarCreator.prototype.riding = function () {
 
 const nine = 9;
 
-// console.log(
-//   "nine.__proto__ === Number.prototype ",
-//   nine.__proto__ === Number.prototype
-// );
+console.log(
+  "nine.__proto__ === Number.prototype ",
+  nine.__proto__ === Number.prototype
+);
 
 const newArr = new Array(1, 3, 4, 5);
 
-// console.log(
-//   "newArr.__proto__ === Array.prototype ",
-//   newArr.__proto__ === Array.prototype
-// );
+console.log(
+  "newArr.__proto__ === Array.prototype ",
+  newArr.__proto__ === Array.prototype
+);
 
-// // console.log(newArr.__proto__.__proto__ );
+// console.log(newArr.__proto__.__proto__ );
 
-// function FirstConstructor() {}
-// function SecondConstructor() {}
+function FirstConstructor() {}
+function SecondConstructor() {}
 
-// console.log(FirstConstructor.prototype === SecondConstructor.prototype);
-// console.log(FirstConstructor.__proto__ === SecondConstructor.__proto__);
+console.log(FirstConstructor.prototype === SecondConstructor.prototype);
+console.log(FirstConstructor.__proto__ === SecondConstructor.__proto__);
 
 // console.log(
 //   "Object.prototype === Array.__proto__.__proto__",
@@ -131,22 +131,22 @@ const User = class {
   }
 };
 
-// const petro = new User("Petro");
+const petro = new User("Petro");
 
-// console.log("petro ", petro);
+console.log("petro ", petro);
 
-// console.log(
-//   " Function.prototype === User.prototype",
-//   Function.prototype === User.prototype
-// );
-// console.log(
-//   "Function.prototype === User.__proto__",
-//   Function.prototype === User.__proto__
-// );
-// console.log(
-//   "Object.prototype === User.__proto__.__proto__",
-//   Object.prototype === User.__proto__.__proto__
-// );
+console.log(
+  " Function.prototype === User.prototype",
+  Function.prototype === User.prototype
+);
+console.log(
+  "Function.prototype === User.__proto__",
+  Function.prototype === User.__proto__
+);
+console.log(
+  "Object.prototype === User.__proto__.__proto__",
+  Object.prototype === User.__proto__.__proto__
+);
 
 const myTestFunction = function () {};
 
@@ -681,7 +681,7 @@ const objToArray = {
 
 const nwArr = Object.keys(objToArray).map((key) => [key, objToArray[key]]);
 
-// console.log("nwArr", nwArr);
+console.log("nwArr", nwArr);
 
 const arrFromObj = Object.entries(objToArray);
 
@@ -700,7 +700,7 @@ const arrToObj_1 = [1, "Opel", { name: "user", age: 25 }, true];
 
 const objFromArr = { ...arrToObj_1 };
 
-// console.log("objFromArr", objFromArr);
+console.log("objFromArr", objFromArr);
 
 /// Наследование функций конструкторов
 
@@ -721,7 +721,7 @@ const Student = function (name) {
   };
 };
 
-const petro = new Student("Petro");
+// const petro = new Student("Petro");
 
 // petro.sayHello()
 // petro.walking()
@@ -756,8 +756,8 @@ const tempObj = {
 
 const { name: superName, age: superAge } = tempObj;
 
-console.log("superName", superName);
-console.log("superAge", superAge);
+// console.log("superName", superName);
+// console.log("superAge", superAge);
 
 const checkArguments = function (a, b, c) {
   const nweArr = Object.keys(arguments).map((key) => arguments[key]);
@@ -767,7 +767,7 @@ const checkArguments = function (a, b, c) {
   return nweArr;
 };
 
-console.log("checkArguments", checkArguments(2, 4, 7));
+// console.log("checkArguments", checkArguments(2, 4, 7));
 
 const myObject = {
   name: "Peter",
