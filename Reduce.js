@@ -56,3 +56,56 @@ const family = users.reduce((initialValue, item) => {
 }, []);
 
 console.log("family", family);
+
+// people with the same age
+
+const people = [
+  {
+    name: "Peter",
+    age: 25,
+  },
+  {
+    name: "Pavlo",
+    age: 25,
+  },
+  {
+    name: "Srgii",
+    age: 37,
+  },
+  {
+    name: "Valeriy",
+    age: 42,
+  },
+  {
+    name: "Andriy",
+    age: 43,
+  },
+  ,
+  {
+    name: "Svitlana",
+    age: 47,
+  },
+  {
+    name: "TETIANA",
+    age: 47,
+  },
+];
+
+const peopleWiththeSameAge = people.reduce((init, item) => {
+
+  console.log('init[item.age]', !!init[item.age])
+
+  const newObject = () =>{
+    init[item.age].push(item.name)
+    return init
+  }
+
+  const result = !!init[item.age]
+    ? newObject()
+    : { ...init, [item.age]: [item.name] };
+
+  console.log("result", result);
+  return result;
+}, {});
+
+console.log("peopleWiththeSameAge", peopleWiththeSameAge);
