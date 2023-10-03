@@ -82,6 +82,20 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.child{
+  padding: 20px;
+
+  background-color: #535bf2;
+}
+.parent{
+  padding: 20px;
+  background-color: red;
+}
+.grandparent{
+  padding: 20px;
+  background-color: green;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
