@@ -309,20 +309,20 @@ const persone = {
   getWindow: getThisObj.bind(window),
 };
 
-persone.getThisObj();
-persone.getWindow();
+// persone.getThisObj();
+// persone.getWindow();
 
 // console.log("persone.getName_3()", getName_3.call(persone));
 
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this
 
-console.log("this === window", this === window);
-console.log("this ", this);
+// console.log("this === window", this === window);
+// console.log("this ", this);
 // В строгом режиме, если значение this не установлено в контексте выполнения, оно остаётся undefined, как показано в следующем примере:
 
 const globalObject = this;
 const foo = () => this;
-console.log("foo() === globalObject", foo() === globalObject);
+// console.log("foo() === globalObject", foo() === globalObject);
 
 // Створюємо this для стрілкової вункції
 
@@ -343,7 +343,8 @@ const persone_2 = {
 
 
 
-console.log('persone_2.getAge() ',  persone_2.getAge())
+// console.log('persone_2.getAge() ',  persone_2.getAge())
+
 // console.log('persone_2.lostName() ',  persone_2.lostName()) this  в такому випадку губиться
 
 
@@ -375,11 +376,19 @@ const son = {
 }
 
 
-parent_1.__proto__ = grandparent
-son.__proto__ = parent_1
+// parent_1.__proto__ = grandparent
+// son.__proto__ = parent_1
 
 
-console.log('son.getCanWalk() ', son.getCanWalk())
+// console.log('son.getCanWalk() ', son.getCanWalk())
 
 
 // 25. Что такое прототип объекта?
+
+// 26. Что такое IIFE?
+
+// (()=> console.log('hello')  )
+
+
+
+console.log('hello')

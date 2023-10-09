@@ -635,7 +635,9 @@ Object.setPrototypeOf(SuperHero.prototype, Men.prototype);
 
 const clarkKent = new SuperHero("Clark Kent");
 
-// console.log(clarkKent.toWalk());
+console.log('clarkKent ', clarkKent);
+console.log('clarkKent.toWalk() ', clarkKent.toWalk());
+console.log('clarkKent.toFly() ', clarkKent.toFly());
 
 ///////////////// carring карирование или частичное применение, на основе замыкания
 
@@ -774,13 +776,13 @@ const myObject = {
   age: 45,
 };
 
-for (key in myObject) {
+for (let key in myObject) {
   console.log("key", key);
 }
 
 for (const [key, value] of Object.entries(myObject)) {
-  console.log("key", key);
-  console.log("value", value);
+  console.log("// key", key);
+  console.log("// value", value);
 }
 
 const swCase = (value) => {
