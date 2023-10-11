@@ -333,62 +333,136 @@ const persone_2 = {
     return (() => this.age)();
   },
 
-  lostName: function() {
-    return (function() {
-      return this.name
-    })()
-  }
+  lostName: function () {
+    return (function () {
+      return this.name;
+    })();
+  },
 };
-
-
-
 
 // console.log('persone_2.getAge() ',  persone_2.getAge())
 
 // console.log('persone_2.lostName() ',  persone_2.lostName()) this  в такому випадку губиться
 
-
 // this та прототипи
 
-
-
-
-
 const grandparent = {
-  gen:'1',
-  name: 'Boris',
-  canWalk: true
-}
+  gen: "1",
+  name: "Boris",
+  canWalk: true,
+};
 
 const parent_1 = {
-  gen:'2',
-  name: 'Igor',
-  canFly: true
-}
+  gen: "2",
+  name: "Igor",
+  canFly: true,
+};
 
 const son = {
-  gen: '3',
-  name: 'Sergii',
+  gen: "3",
+  name: "Sergii",
   canRead: true,
-  getCanWalk: function() {
-    return this.canWalk
-  }
-}
-
+  getCanWalk: function () {
+    return this.canWalk;
+  },
+};
 
 // parent_1.__proto__ = grandparent
 // son.__proto__ = parent_1
 
-
 // console.log('son.getCanWalk() ', son.getCanWalk())
-
 
 // 25. Что такое прототип объекта?
 
 // 26. Что такое IIFE?
 
-// (()=> console.log('hello')  )
+(() => console.log("hello 2"))();
+
+console.log("hello");
+
+(function () {
+  console.log("Immidiate invoke function expression 1");
+})();
+
+// 27. Для чего используется метод Function.prototype.apply?
+
+const applyContext = function (someArr) {
+  return ` ${someArr}  ${this.color} fish`;
+};
+
+const blueFish = {
+  name: "Blue Fish",
+  color: "blue",
+};
+
+const getColor = applyContext.apply(blueFish, ["wow this is"]);
+
+console.log("getColor", getColor);
+
+// 30. Для чего используется метод Function.prototype.bind?
+
+const oleksii = {
+  name: "Alex",
+};
+
+const greating = function (someArg) {
+  return "Hello " + this.name + " " + someArg;
+};
+
+const binedGreatinfFunction = greating.bind(oleksii, "how are you?");
+
+console.log("binedGreatinfFunction()", binedGreatinfFunction());
+
+// 37. Что такое объект arguments?
+
+const argumentsFn = function (a, b, c) {
+  const res = Array.prototype.slice.call(arguments);
+  console.log("res", Array.isArray(res));
+  console.log("arguments", Array.isArray(arguments));
+};
+
+argumentsFn(5, "Hello arguments", true);
+
+const alternativeToArguments = function (...rest) {
+  console.log("rest", rest);
+
+  rest.forEach((item) => {
+    console.log("item", item);
+  });
+};
+
+alternativeToArguments("3", 5, "hello", false);
+
+const getArroFarguments = (...rest) => rest;
+
+console.log("getArroFarguments()", getArroFarguments(2, "3", true, new Date()));
+console.log(
+  "getArroFarguments()",
+  getArroFarguments("hello", 7, 5, 7, 0, true)
+);
+
+// 38. Как создать объект, не имеющий прототипа?
+
+const objetWithoutPrototype = Object.create(null, {
+  name: {
+    value: "Petro",
+  },
+});
+
+console.log("objetWithoutPrototype ", objetWithoutPrototype);
+console.log("objetWithoutPrototype ", objetWithoutPrototype.__proto__);
+
+// 39. Почему в представленном коде переменная b становится глобальной при вызове функции?
+
+function variableFn() {
+  let a = (b = 1); 
+}
+
+// variableFn(); //ReferenceError: b is not defined
 
 
+// 40. Что такое ECMAScript?
 
-console.log('hello')
+
+// 42. В чем разница между ключевыми словами «var», «let» и «const»?
+
