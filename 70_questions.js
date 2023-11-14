@@ -455,7 +455,7 @@ console.log("objetWithoutPrototype ", objetWithoutPrototype.__proto__);
 // 39. Почему в представленном коде переменная b становится глобальной при вызове функции?
 
 function variableFn() {
-  let a = (b = 1); 
+  let a = (b = 1);
 }
 
 // variableFn(); //ReferenceError: b is not defined
@@ -465,4 +465,20 @@ function variableFn() {
 
 
 // 42. В чем разница между ключевыми словами «var», «let» и «const»?
+
+// 45. Что такое шаблонные литералы (Template Literals)?
+
+
+const greating_1 = `
+Hello
+this 
+is 
+greating
+
+`
+
+console.log('greating_1', greating_1)
+
+// 46. Что такое деструктуризация объекта (Object Destructuring)?
+
 
