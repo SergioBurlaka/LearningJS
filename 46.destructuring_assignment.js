@@ -37,3 +37,24 @@ console.log('first', first)
 console.log('second', second)
 console.log('rest_2', rest_2)
 
+// rest
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/rest_parameters
+
+
+
+// функція підрахунку суми чисел чеерез ...rest
+
+
+const addition = (...rest) => {
+
+  return rest.reduce((acc, item,) => {
+
+    return acc + item
+  }, 0)
+
+}
+
+
+console.log('addition', addition(8, 9, 10, 11, 12))
+console.log('addition', addition(2, 2))
+
