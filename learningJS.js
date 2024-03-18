@@ -13,23 +13,6 @@ const factorial = (n) => {
 
 // console.log('factorial(5)', factorial(5))
 
-const clouser = (n) => {
-  let count = n;
-  return () => {
-    return count++;
-  };
-};
-
-const counter = clouser(0);
-const counter2 = clouser(5);
-
-// console.log('counter()', counter())
-// console.log('counter()', counter())
-// console.log('counter()', counter())
-
-// console.log('counter2()', counter2())
-// console.log('counter2()', counter2())
-// console.log('counter2()', counter2())
 
 // 24. Какое значение имеет this?
 
@@ -638,71 +621,6 @@ const clarkKent = new SuperHero("Clark Kent");
 console.log('clarkKent ', clarkKent);
 console.log('clarkKent.toWalk() ', clarkKent.toWalk());
 console.log('clarkKent.toFly() ', clarkKent.toFly());
-
-///////////////// carring карирование или частичное применение, на основе замыкания
-
-const users = [
-  {
-    name: "Petro",
-    age: 24,
-  },
-  {
-    name: "Sergii",
-    age: 36,
-  },
-  {
-    name: "Marta",
-    age: 32,
-  },
-  {
-    name: "Pavlo",
-    age: 28,
-  },
-];
-
-const caaryFn = (propName) => (obj) => obj[propName];
-
-const names = users.map(caaryFn("name"));
-const ages = users.map(caaryFn("age"));
-
-// console.log("names", names);
-// console.log("ages", ages);
-
-// .... преобразовать обьект в массив {} to []
-
-const objToArray = {
-  name: "Marta",
-  age: 32,
-  father: {
-    name: "Igor",
-    age: 53,
-  },
-  numbers: [1, 2, 6],
-  bolean: true,
-};
-
-const nwArr = Object.keys(objToArray).map((key) => [key, objToArray[key]]);
-
-console.log("nwArr", nwArr);
-
-const arrFromObj = Object.entries(objToArray);
-
-// console.log("arrFromObj", arrFromObj);
-
-const arrToObj = [1, 4, 5, 6, 7];
-
-// const objFromArr_1 = Object.fromEntries(arrToObj);
-// console.log("arrToObj", arrToObj);
-
-// console.log( Object.keys({name: 'Marta', age: 32}))
-
-// Convert array to object
-
-const arrToObj_1 = [1, "Opel", { name: "user", age: 25 }, true];
-
-const objFromArr = { ...arrToObj_1 };
-
-console.log("objFromArr", objFromArr);
 
 /// Наследование функций конструкторов
 

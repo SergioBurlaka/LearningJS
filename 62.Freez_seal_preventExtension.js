@@ -1,10 +1,23 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
+// configurable
+// Равен true только в том случае, если тип этого дескриптора свойства может быть изменён и если свойство может быть удалено из содержащего его объекта. Значение по умолчанию установлено в false.
+
+// enumerable
+// Равен true только в том случае, если это свойство можно увидеть через перечисление свойств содержащего его объекта. Значение по умолчанию установлено в false.
+
+// Дескриптор данных также может содержать следующие дополнительные ключи:
+
+// value
+// Значение, ассоциированное со свойством. Может быть любым допустимым значением JavaScript (числом, объектом, функцией и т.д.). Значение по умолчанию установлено в undefined.
+
+// writable
+// Равен true только в том случае, если значение, ассоциированное со свойством, может быть изменено с помощью оператора присваивания (en-US). Значение по умолчанию установлено в false.
+
 const child = {
   gen: "2",
   canWalk: true,
 };
-
 
 Object.defineProperty(child, "nonIterablePrp", {
   value: "Hello i am not iterable property",
@@ -16,7 +29,6 @@ for (let item in child) {
 }
 
 console.log("child", child);
-
 
 //  https://learn.javascript.ru/property-descriptors#globalnoe-zapechatyvanie-obekta
 

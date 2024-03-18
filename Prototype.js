@@ -1,7 +1,6 @@
 // https://learn.javascript.ru/prototype-inheritance
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
-
 // Дуже корисне відео по прототипах
 // https://www.youtube.com/watch?v=b55hiUlhAzI&t=1738s
 
@@ -138,5 +137,3 @@ console.log(
 ); // true
 
 console.log(" rabbit_3.canWalk()", rabbit_3.canFly());
-
-

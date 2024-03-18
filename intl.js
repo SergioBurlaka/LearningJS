@@ -14,7 +14,7 @@ const myBrowserLocalization = window.navigator.language;
 const usaLocalization = "en-US";
 const spanishLocalization = "es-ES";
 const ukraineLocalization = "uk-UA";
-const germanyLocalization = 'de-DE';
+const germanyLocalization = "de-DE";
 
 console.log("myBrowserLocalization ", myBrowserLocalization);
 
@@ -142,156 +142,138 @@ const tomorrow = new Intl.RelativeTimeFormat(myBrowserLocalization, {
 
 console.log("tomorrow ", tomorrow);
 
-
 // Intl.NumberFormat
-
 
 // https://www.youtube.com/watch?v=1vf7CuHRkX8&t=310s&ab_channel=%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%9D%D0%B5%D0%BF%D0%BE%D0%BC%D0%BD%D1%8F%D1%89%D0%B8%D0%B9
 
-
-
-
 function formatPercent(value = 0) {
-  return new Intl.NumberFormat('de-DE', {
-    style: 'percent',
-  }).format(value)
+  return new Intl.NumberFormat("de-DE", {
+    style: "percent",
+  }).format(value);
 }
 
 function formatEur(value = 0) {
-  return new Intl.NumberFormat('de-DE', {
-    style: 'currency',
-    currency: 'EUR',
-  }).format(value)
+  return new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  }).format(value);
 }
 
-
-const resPercent = formatPercent(0.65)
+const resPercent = formatPercent(0.65);
 
 console.log("resPercent ", resPercent);
 
-
-const resEuro = formatEur(284.65)
+const resEuro = formatEur(284.65);
 
 console.log("resEuro ", resEuro);
 
-const formatNumber = new Intl.NumberFormat(undefined, {currency: 'USD', style: 'currency'}).format(9234.23)
+const formatNumber = new Intl.NumberFormat(undefined, {
+  currency: "USD",
+  style: "currency",
+}).format(9234.23);
 
 console.log("formatNumber ", formatNumber);
 
+const price = 1056.78;
 
-const price = 1056.78
-
-const formatNumber_2 = new Intl.NumberFormat(ukraineLocalization, {currency: 'EUR', currencyDisplay: 'name',style: 'currency'}).format(price)
+const formatNumber_2 = new Intl.NumberFormat(ukraineLocalization, {
+  currency: "EUR",
+  currencyDisplay: "name",
+  style: "currency",
+}).format(price);
 
 console.log("formatNumber_2 ", formatNumber_2);
 
-
 const formaterCurrency = new Intl.NumberFormat(usaLocalization, {
-  currency: 'YEN',
-  style: 'currency'
-}).format(97738)
+  currency: "YEN",
+  style: "currency",
+}).format(97738);
 
 console.log("formaterCurrency ", formaterCurrency);
 
 const formaterCurrency_2 = new Intl.NumberFormat(germanyLocalization, {
-  currency: 'EUR',
-  style: 'currency'
-}).format(34535)
+  currency: "EUR",
+  style: "currency",
+}).format(34535);
 
 console.log("formaterCurrency_2 ", formaterCurrency_2);
 
 const mySaalry = new Intl.NumberFormat(germanyLocalization, {
-  currency: 'UAH',
-  style: 'currency'
-}).format(48560.43)
+  currency: "UAH",
+  style: "currency",
+}).format(48560.43);
 
 console.log("mySaalry ", mySaalry);
 
-
 const mySaalryUSD = new Intl.NumberFormat(usaLocalization, {
-  currency: 'USD',
-  style: 'currency'
-}).format(1800.76)
+  currency: "USD",
+  style: "currency",
+}).format(1800.76);
 
 console.log("mySaalryUSD ", mySaalryUSD);
 
 // liter
 
-
 const volumeGalon = new Intl.NumberFormat(usaLocalization, {
-  style: 'unit',
-  unit: 'gallon',
-  unitDisplay: 'long'
-
-}).format(98)
+  style: "unit",
+  unit: "gallon",
+  unitDisplay: "long",
+}).format(98);
 
 console.log("volumeGalon ", volumeGalon);
 
-
 const volumeLiter = new Intl.NumberFormat(usaLocalization, {
-  style: 'unit',
-  unit: 'liter',
-  unitDisplay: 'long'
-}).format(45)
+  style: "unit",
+  unit: "liter",
+  unitDisplay: "long",
+}).format(45);
 
 console.log("volumeLiter ", volumeLiter);
 
-
 // notation
 
-
 const notationBillion = new Intl.NumberFormat(usaLocalization, {
-  notation:'compact'
-}).format(234151345134)
+  notation: "compact",
+}).format(234151345134);
 
 console.log("notationBillion ", notationBillion);
 
 const notationThousand = new Intl.NumberFormat(usaLocalization, {
-  notation:'compact'
-}).format(19993)
+  notation: "compact",
+}).format(19993);
 
 console.log("notationThousand ", notationThousand);
 
-
-
 const fractionalDigits = new Intl.NumberFormat(usaLocalization, {
-  maximumFractionDigits: 2
-}).format(4.365345265464)
+  maximumFractionDigits: 2,
+}).format(4.365345265464);
 
 console.log("fractionalDigits ", fractionalDigits);
 
 const fractionalDigits_2 = new Intl.NumberFormat(usaLocalization, {
-  minimumFractionDigits: 2
-}).format(8)
+  minimumFractionDigits: 2,
+}).format(8);
 
 console.log("fractionalDigits_2 ", fractionalDigits_2);
 
 //  Plural Routes
 
-const pluralExample  =  new Intl.PluralRules(ukraineLocalization).select(0)
+const pluralExample = new Intl.PluralRules(ukraineLocalization).select(0);
 
 console.log("pluralExample ", pluralExample);
 
-const pluralExample_1  =  new Intl.PluralRules(ukraineLocalization).select(1)
+const pluralExample_1 = new Intl.PluralRules(ukraineLocalization).select(1);
 
 console.log("pluralExample_1 ", pluralExample_1);
 
-
-const pluralExample_2  =  new Intl.PluralRules(ukraineLocalization).select(-1)
+const pluralExample_2 = new Intl.PluralRules(ukraineLocalization).select(-1);
 
 console.log("pluralExample_2 ", pluralExample_2);
 
-const pluralExample_3  =  new Intl.PluralRules(ukraineLocalization).select(2)
+const pluralExample_3 = new Intl.PluralRules(ukraineLocalization).select(2);
 
 console.log("pluralExample_3 ", pluralExample_3);
 
-const pluralExample_4  =  new Intl.PluralRules(ukraineLocalization).select(3)
+const pluralExample_4 = new Intl.PluralRules(ukraineLocalization).select(3);
 
 console.log("pluralExample_4 ", pluralExample_4);
-
-
-
-
-
-
-

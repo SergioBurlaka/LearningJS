@@ -9,10 +9,13 @@ const minusToNumber = "3" - "2";
 
 console.log("minusToNumber  ", typeof minusToNumber, minusToNumber);
 
-
 const multiplicationToNumber = "3" * "2";
 
-console.log("multiplicationToNumber  ", typeof multiplicationToNumber, multiplicationToNumber);
+console.log(
+  "multiplicationToNumber  ",
+  typeof multiplicationToNumber,
+  multiplicationToNumber
+);
 
 const dividionToNumber = "3" * "2";
 

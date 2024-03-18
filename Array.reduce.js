@@ -92,13 +92,12 @@ const people = [
 ];
 
 const peopleWiththeSameAge = people.reduce((init, item) => {
+  console.log("init[item.age]", !!init[item.age]);
 
-  console.log('init[item.age]', !!init[item.age])
-
-  const newObject = () =>{
-    init[item.age].push(item.name)
-    return init
-  }
+  const newObject = () => {
+    init[item.age].push(item.name);
+    return init;
+  };
 
   const result = !!init[item.age]
     ? newObject()
