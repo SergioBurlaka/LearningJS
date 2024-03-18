@@ -86,3 +86,13 @@ const myGrandfather = {
 const mapMyDido = new Map(Object.entries(myGrandfather));
 
 console.log(" mapMyDido.entries()", mapMyDido.entries());
+
+const myMap_3 = new Map();
+
+myMap_3.set("hello", true);
+myMap_3.set([], "some persone obj");
+myMap_3.set(name, "Vasil");
+
+for (let value of myMap_3) {
+  console.log("value fo myMap_3", value);
+}

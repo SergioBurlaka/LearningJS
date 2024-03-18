@@ -1,8 +1,5 @@
-
 // 70 вопросов по JavaScript для подготовки к собеседованию
 // https://habr.com/ru/articles/486820/
-
-
 
 // console.log('learning java script')
 
@@ -12,7 +9,6 @@ const factorial = (n) => {
 };
 
 // console.log('factorial(5)', factorial(5))
-
 
 // 24. Какое значение имеет this?
 
@@ -243,91 +239,6 @@ const isObjectEmpty = (obj) => {
 // console.log("isObjectEmpty (emptyObject)", isObjectEmpty(emptyObject));
 // console.log("isObjectEmpty (emptyObject_2)", isObjectEmpty(emptyObject_2));
 
-const generator = function* () {
-  yield 1;
-  yield 2;
-  yield 3;
-};
-
-const generatorResult = generator();
-
-// console.log("generatorResult", generatorResult);
-
-const one = generatorResult.next();
-const two = generatorResult.next();
-const three = generatorResult.next();
-
-// console.log("one", JSON.stringify(one));
-// console.log("two", JSON.stringify(two));
-// console.log("three", JSON.stringify(three));
-
-const params = [...generator()];
-
-// console.log("params", params);
-
-function* gen() {
-  let ask1 = yield "2 + 2 = ?";
-
-  let ask2 = yield "3 * 3 = ?";
-}
-
-let generator_2 = gen();
-
-// console.log(generator_2.next().value); // "2 + 2 = ?"
-
-// console.log(generator_2.next().value); // "3 * 3 = ?"
-
-// console.log(generator_2.next().done); // true
-
-// Примеры карирования (по сути это замыкание)
-
-const sum = (a, b) => a + b;
-
-const sumCarry = (a) => (b) => a + b;
-
-// console.log("sum ", sum(10, 7));
-// console.log("sumCarry ", sumCarry(15)(3));
-
-const sumOnFive = sumCarry(5);
-const sumOn_3 = sumCarry(3);
-
-// console.log("sumOnFive ", sumOnFive(7));
-// console.log("sumOn_3 ", sumOn_3(7));
-
-const arrOfObj = [
-  {
-    id: 1,
-    name: "name _1",
-  },
-  {
-    id: 2,
-    name: "name _2",
-  },
-  {
-    id: 3,
-    name: "name _3",
-  },
-  {
-    id: 4,
-    name: "name _4",
-  },
-];
-
-const get = (property) => (objet) => objet[property];
-
-const getId = get("id");
-const getNmae = get("name");
-
-const arrId = arrOfObj.map(getId);
-const arrName = arrOfObj.map(getNmae);
-
-// console.log("arrId ", arrId);
-// console.log("arrName ", arrName);
-
-const mapedResp = (fn) => (objet) => objet.map(fn);
-
-// console.log("mapedResp", mapedResp(get("id"))(arrOfObj));
-
 ///////////////
 
 const str = "Rome";
@@ -524,56 +435,6 @@ const myPromise_2 = getPromise();
 //   console.log("myPromise_2", res);
 // });
 
-////////// Map
-
-const myMap = new Map();
-
-myMap.set("1", "string");
-myMap.set(1, "num");
-myMap.set(true, "boolean");
-
-// console.log("myMap.get(true)", myMap.get(true));
-
-// console.log("myMap.get(true)", myMap.get(true));
-
-// console.log("myMap.size", myMap.size);
-// console.log("myMap", myMap);
-
-/////////////// Object iteration
-
-const men = {
-  tall: 165,
-  weight: 75,
-};
-
-const myObjForIteration = {
-  age: 24,
-  name: "Petro",
-  car: "Mersedes",
-};
-
-myObjForIteration.__proto__ = men;
-
-const myIterObj = (obj) => {
-  for (let key in obj) {
-    console.log("all property", obj[key]);
-
-    if (obj.hasOwnProperty(key)) {
-      console.log("hasOwnProperty", obj[key]);
-    }
-  }
-};
-
-// myIterObj(myObjForIteration);
-
-/// array to object
-
-const arrToObject = ["4", 5, 7, true, "hello"];
-
-const newObj = { ...arrToObject };
-
-// console.log("newObj", newObj);
-
 ////// Наследование в конструкторах
 
 const Human = function (name) {
@@ -618,9 +479,9 @@ Object.setPrototypeOf(SuperHero.prototype, Men.prototype);
 
 const clarkKent = new SuperHero("Clark Kent");
 
-console.log('clarkKent ', clarkKent);
-console.log('clarkKent.toWalk() ', clarkKent.toWalk());
-console.log('clarkKent.toFly() ', clarkKent.toFly());
+console.log("clarkKent ", clarkKent);
+console.log("clarkKent.toWalk() ", clarkKent.toWalk());
+console.log("clarkKent.toFly() ", clarkKent.toFly());
 
 /// Наследование функций конструкторов
 
@@ -786,5 +647,3 @@ console.log(
   "cars.some('Opel')",
   cars.some((item) => item === "Opel")
 );
-
-
