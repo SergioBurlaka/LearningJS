@@ -1,3 +1,5 @@
+//  node ./62.Freez_seal_preventExtension.js
+
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
 // configurable
@@ -18,6 +20,8 @@ const child = {
   gen: "2",
   canWalk: true,
 };
+
+// створення об'єкту створення властивостей з певними дескрипторами
 
 Object.defineProperty(child, "nonIterablePrp", {
   value: "Hello i am not iterable property",
@@ -53,7 +57,7 @@ Object.freeze(testFreezObj);
 // console.log("testFreezObj", testFreezObj);
 //////////////////////////////////////////////////////
 
-const testFreezObj_2 = {
+const preventExtensionsObj = {
   name: "Ronaldo",
   age: 37,
 };
@@ -61,35 +65,78 @@ const testFreezObj_2 = {
 // Object.preventExtensions(obj)
 // Запрещает добавлять новые свойства в объект.
 
-Object.preventExtensions(testFreezObj_2);
+Object.preventExtensions(preventExtensionsObj);
 
-testFreezObj_2.age = 46;
-delete testFreezObj_2.name;
+preventExtensionsObj.age = 46;
+delete preventExtensionsObj.name;
 
 //  TypeError: Cannot add property rank, object is not extensible
-// testFreezObj_2.rank = 1
+// preventExtensionsObj.rank = 1
 
-console.log("testFreezObj_2", testFreezObj_2);
+console.log("preventExtensionsObj", preventExtensionsObj);
 
 ///////////////////////////////////////////////////////
 
 // Object.seal(obj)
 // Запрещает добавлять/удалять свойства. Устанавливает configurable: false для всех существующих свойств.
 
-const testFreezObj_3 = {
+const sealObj = {
   name: "Elon Mask",
   age: 52,
 };
-Object.seal(testFreezObj_3);
+Object.seal(sealObj);
 
 // TypeError: Cannot delete property 'name' of #<Object>
-// delete testFreezObj_3.name
+// delete sealObj.name
 
-testFreezObj_3.name = "Mudak";
+sealObj.name = "Mudak";
 
 // TypeError: Cannot add property rank,
-// testFreezObj_3.rank = 1
+// sealObj.rank = 1
 
-console.log("testFreezObj_3", testFreezObj_3);
+console.log("sealObj", sealObj);
 
 ////////
+
+// Перевірка властивостей об'єкта
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors
+
+const descriptorsFreez = Object.getOwnPropertyDescriptors(testFreezObj);
+
+console.log("descriptorsFreez", descriptorsFreez);
+
+// descriptorsFreez {
+//   name: {
+//     value: 'Maraev',
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   age: { value: 43, writable: false, enumerable: true, configurable: false }
+// }
+
+const descriptorsPreventExtensions =
+Object.getOwnPropertyDescriptors(preventExtensionsObj);
+
+
+console.log("descriptorsPreventExtensions", descriptorsPreventExtensions);
+
+// descriptorsPreventExtensions {
+//   age: { value: 46, writable: true, enumerable: true, configurable: true }  
+// }
+
+
+const descriptorsSeal = Object.getOwnPropertyDescriptors(sealObj);
+
+console.log("descriptorsSeal", descriptorsSeal);
+
+
+// descriptorsSeal {
+//   name: {
+//     value: 'Mudak',
+//     writable: true,
+//     enumerable: true,
+//     configurable: false
+//   },
+//   age: { value: 52, writable: true, enumerable: true, configurable: false }
+// }
